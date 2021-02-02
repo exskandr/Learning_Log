@@ -123,11 +123,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
-
 # my settings
 LOGIN_URL = '/accounts/login/'
 
@@ -152,12 +147,8 @@ if os.getcwd() == '/app':
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    # STATIC_ROOT = 'staticfiles'
-    # STATICFILES_DIRS = (
-    #     os.path.join(BASE_DIR, 'static'),
-    )
+    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),
+                        )
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
